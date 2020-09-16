@@ -28,30 +28,9 @@
 
             if($result = $db->query($get_projects_sql)){
                 if($result->num_rows > 0){
-                    $projects_data = array();
-
                     while($project_data = $result->fetch_assoc()){
                         $id = $project_data['id'];
                         $title = $project_data['title'];
-
-                        echo <<<ENDL
-                            <div class="project" onclick="location.href='projekt/?id=$id'">
-                                <span class="project-title">$title</span>
-                            </div>
-                        ENDL;
-
-                        $project_array = array($id, $title);
-
-                        print_r($project_array);
-                        
-                        array_push($project_data, $project_array);
-                    }
-
-                    print_r($projects_data);
-
-                    foreach(array_reverse($projects_data) as $project_data){
-                        $id = $project_data[0];
-                        $title = $project_data[1];
 
                         echo <<<ENDL
                             <div class="project" onclick="location.href='projekt/?id=$id'">
