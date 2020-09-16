@@ -1,0 +1,10 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+
+main{
+    margin-top: 5%;
+}
