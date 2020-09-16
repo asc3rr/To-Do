@@ -13,6 +13,7 @@
     <title>To Do - Strona Główna</title>
 
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
 </head>
@@ -23,8 +24,6 @@
 
             $login = $_SESSION['login'];
             $get_projects_sql = "SELECT * FROM `projects` WHERE `author`='$login' GROUP BY `id` DESC";
-
-            echo "$login<br />$get_projects_sql";
 
             if($result = $db->query($get_projects_sql)){
                 if($result->num_rows > 0){
