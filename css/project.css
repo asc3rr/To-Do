@@ -13,7 +13,7 @@
 }
 #buttons{
     float: right;
-    margin-right: 10px;
+    margin-right: 2%;
 }
 .button{
     color: white;
@@ -52,4 +52,19 @@ main{
     color: white;
 
     float: left;
+}
+
+.button{
+    text-decoration: none;
+    color: white;
+
+    padding: 5px;
+
+    transition: .3s ease-in;
+}
+.button:hover{
+    color: black;
+
+    background-color: yellow;
+    border-radius: 10px;
 }

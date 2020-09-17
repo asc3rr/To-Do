@@ -6,6 +6,10 @@
         header("Location: ../");
     }
 
+    if(!isset($_GET['id'])){
+        header("Location: ../");
+    }
+
     $login = $_SESSION['login'];
 
     $id = mysqli_real_escape_string($db, $_GET['id']);
@@ -53,7 +57,11 @@
     <div id="logo">
         <?php echo $title;?>
         <div id="buttons">
-            <a class="button" href="add-task.php">Dodaj zadanie</a>
+            <?php
+                echo <<<ENDL
+                    <a class="button" href="dodaj-zadanie.php?id=$id">Dodaj Zadanie</a>
+                ENDL;
+            ?>
         </div>
     </div>
     <main>
@@ -61,7 +69,7 @@
             if(!isset($error)){
                 echo <<<ENDL
                 <div class="task">
-                    <a class="task-button" href="delete-task.php?id=$task_id">Skończyłem już</a>
+                    <a class="task-button" href="delete-task.php?id=$task_id&project_id=$id">Skończyłem już</a>
                     <span class="task-title">$content</span>
                 </div>
                 ENDL;
