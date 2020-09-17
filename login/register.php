@@ -38,9 +38,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <div id="logo">
-        To Do
-    </div>
     <main>
         <?php echo $msg; ?>
         <form method="post" action="register.php">
@@ -48,7 +45,7 @@
             <br />
             Hasło: <input class="input" type="password" placeholder="Hasło" name="password"><br />
             <br />
-            <input class="submit" type="submit" value="Zaloguj się">
+            <input class="submit" type="submit" value="Zarejestruj się">
         </form>
         <a style="color: white; text-decoration: none;" href="index.php">Masz już konto? <u>Zaloguj się</u></a>
     </main>
