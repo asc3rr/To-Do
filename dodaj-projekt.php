@@ -5,28 +5,23 @@
         header("Location: ../");
     }
 
-    if(!isset($_GET['id'])){
-        header("Location: ../");
-    }
-
-    require_once "../connect.php";
+    require_once "connect.php";
 
     if(isset($_POST['content'])){
         //GETTING ID
-        $get_id_sql = "SELECT * FROM `tasks`";
+        $get_id_sql = "SELECT * FROM `projects`";
 
         $result = $db->query($get_id_sql);
 
         $id = $result->num_rows + 1;
-        $project_id = mysqli_real_escape_string($db, $_GET['id']);
         $content = mysqli_real_escape_string($db, nl2br($_POST['content']));
         $author = $_SESSION['login'];
 
-        $insert_sql = "INSERT INTO `tasks`(`id`, `project_id`, `content`, `author`) VALUES ($id, $project_id, '$content', '$author')";
+        $insert_sql = "INSERT INTO `projects`(`id`, `title`, `author`) VALUES ($id, '$content', '$author')";
 
         $db->query($insert_sql);
 
-        header("Location: index.php?id=$project_id");
+        header("Location: index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -36,9 +31,9 @@
 
     <title>To Do - Projekt</title>
 
-    <link rel="stylesheet" href="../css/project.css">
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../css/form.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
     <main>
@@ -46,7 +41,7 @@
             Treść: <br />
             <textarea name="content"></textarea><br />
             <br />
-            <input type="submit" value="Dodaj zadanie">
+            <input type="submit" value="Dodaj projekt">
         </form>
     </main>
 </body>

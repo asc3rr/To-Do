@@ -12,12 +12,19 @@
 
     <title>To Do - Strona Główna</title>
 
+    <link rel="stylesheet" href="css/project.css">
     <link rel="stylesheet" href="css/all.css">
     <link rel="stylesheet" href="css/index.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <div id="logo">
+        Projekty
+        <div id="buttons">
+            <a class="button" href="dodaj-projekt.php">Dodaj projekt</a>
+        </div>
+    </div>
     <main>
         <?php
             require_once "connect.php";
